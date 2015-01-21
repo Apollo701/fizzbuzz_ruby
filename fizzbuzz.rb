@@ -23,9 +23,13 @@
         "N" is in range [21, 100]
 
 =end
-module Fizzbuzz
-  def fizzbuzz
-    __FILE__= File.open(ARGV)
-
+  def fizz_buzz
+    read_file
   end
-end
+
+  def read_file
+    file = File.open('test.txt')
+    puts lines = file.readlines
+  end
+
+  fizz_buzz
