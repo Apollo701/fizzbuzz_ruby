@@ -27,9 +27,8 @@
   def fizz_buzz
     File.readlines(ARGV.first).map do |line|
       @fizz, @buzz, @max_num = line.split.map(&:to_i)
-      @fizz_buzz = @fizz * @buzz
       (1..Integer(@max_num)).each do |num|
-        if (num % @fizz_buzz == 0)
+        if ((num % @fizz == 0) and (num % @buzz == 0))
           print 'FB '
         elsif (num % @fizz == 0)
           print 'F '
