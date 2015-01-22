@@ -23,13 +23,24 @@
         "N" is in range [21, 100]
 
 =end
-  def fizz_buzz
-    read_file
-  end
 
-  def read_file
-    file = File.open('test.txt')
-    puts lines = file.readlines
+  def fizz_buzz
+    File.readlines('ARGV').map do |line|
+      @fizz, @buzz, @max_num = line.split.map(&:to_i)
+      @fizz_buzz = @fizz * @buzz
+      (1..Integer(@max_num)).each do |num|
+        if (num % @fizz_buzz == 0)
+          print 'FB '
+        elsif (num % @fizz == 0)
+          print 'F '
+        elsif (num % @buzz == 0)
+          print 'B '
+        else
+          print "#{num} "
+        end
+      end
+      puts
+    end
   end
 
   fizz_buzz
