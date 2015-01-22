@@ -25,7 +25,7 @@
 =end
 
   def fizz_buzz
-    File.readlines('ARGV').map do |line|
+    File.readlines(ARGV.first).map do |line|
       @fizz, @buzz, @max_num = line.split.map(&:to_i)
       @fizz_buzz = @fizz * @buzz
       (1..Integer(@max_num)).each do |num|
